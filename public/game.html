@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="container-fluid bg-dark">
+      <div id="startField">
+        <div class="header">
+          <div class="active">
+            <p>
+              <span class="aciive_circel">&nbsp;</span>&nbsp; <span id="active"></span>&nbsp; User
+              are actived
+            </p>
+          </div>
+        </div>
+        <div class="main">
+          <div class="row">
+            <div class="col-md-6 text-center mt-3 mb-5">
+              <div id="chat" class="mb-5">
+                <div class="chat_container">
+                  <h2 class="text-center text-warning">Chat Box</h2>
+                  <div class="message_chat">
+                    <div id="chatbox">
+                      <h6 class="text-center text-light">chat room</h6>
+                    </div>
+                  </div>
+                  <input
+                    type="text"
+                    name=""
+                    id="chatinput"
+                    placeholder="Enter Your Message"
+                    class="form-control mt-1"
+                  />
+                  <button type="submit" class="btn btn-success w-100 mt-3" onclick="chat()">
+                    Send
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 text-center bg-light pb-5 pt-5">
+              <div id="create_field" class="mb-5">
+                <h3 class="text-primary">Create Match</h3>
+                <div class="create_room">
+                  <input
+                    type="text"
+                    name="room"
+                    id="create_match"
+                    placeholder="Enter Room Name"
+                    class="border border-primary form-control"
+                  />
+                  <button
+                    type="submit"
+                    class="btn btn-danger"
+                    onclick="createRoom()"
+                    id="create_btn"
+                  >
+                    Create Match
+                  </button>
+                </div>
+                <h6 class="showPlayerName">Player Name : <span id="plaryername"></span></h6>
+              </div>
+              <div id="join_field">
+                <h3 class="text-center text-primary">Join Match</h3>
+                <div class="text-center text-danger mb-3">
+                  <!-- <br />
+                  (Now only you can play 2 player) <br />
+                  we mantain to play with more 2 player -->
+                </div>
+                <div id="room_container">
+                  <!-- <div class="room">
+                    <div class="row">
+                      <div class="room_info col-xs-6">Room Name 1</div>
+                      <div class="room_join col-xs-6">
+                        <button
+                          type="submit"
+                          class="btn btn-success"
+                          id="join_btn"
+                        >
+                          Join Match
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+               -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="gameField" class="pb-5" style="display: none">
+        <div id="popupMessage">
+          <div class="message_box_container">
+            <div class="message_box">
+              <div id="message"></div>
+              <button class="btn btn-success restart_btn" onclick="restartgame()">
+                Restart Game
+              </button>
+            </div>
+          </div>
+        </div>
+        <div id="game">
+          <div class="gamefield_btn_container">
+            <button id="backBtn" class="btn btn-danger" onclick="backAction()">Back</button>
+            <!-- <button id="resetBtn" class="btn btn-light">reset</button> -->
+            <!-- <button id="resetBtn" class="btn btn-light">reset</button> -->
+            <!-- <button id="resetBtn" class="btn btn-light">reset</button> -->
+          </div>
+          <div class="gamefield_container">
+            <div class="usrinfo">
+              <div class="client_side">
+                <div class="usr_info">
+                  <span id="playerOne" class="usrname">You</span>
+                  <div class="x">X</div>
+                </div>
+                <div
+                  id="cpoint"
+                  style="display: block; width: 150px"
+                  class="text-center text-danger border border-danger bg-dark"
+                >
+                  0
+                </div>
+              </div>
+              <div class="server_side">
+                <div class="usr_info">
+                  <span id="playerTwo" class="usrname">Other</span>
+                  <div class="o">o</div>
+                </div>
+                <div
+                  id="spoint"
+                  style="display: block; width: 150px"
+                  class="text-center text-danger border border-danger bg-dark"
+                >
+                  0
+                </div>
+              </div>
+            </div>
+
+            <div id="Message" class="text-secondary text-center">
+              <p>
+                Waiting For Other Player &nbsp;
+                <img src="./img/512x512.gif" alt="" srcset="" width="100" height="100" />
+              </p>
+            </div>
+
+            <div class="gameboard" id="gameboard">
+              <div class="gamebox">
+                <div class="row_1">
+                  <div class="box_1 box" onclick="choose(0);this.onclick=null;">
+                    <div class="card">
+                      <div class="font"></div>
+                      <div class="back">Back</div>
+                    </div>
+                  </div>
+                  <div class="box_2 box" onclick="choose(1);this.onclick=null;">
+                    <div class="card">
+                      <div class="font"></div>
+                      <div class="back">Back</div>
+                    </div>
+                  </div>
+                  <div class="box_3 box" onclick="choose(2);this.onclick=null; ">
+                    <div class="card">
+                      <div class="font"></div>
+                      <div class="back">Back</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row_2">
+                  <div class="box_1 box" onclick="choose(3);this.onclick=null;">
+                    <div class="card">
+                      <div class="font"></div>
+                      <div class="back">Back</div>
+                    </div>
+                  </div>
+                  <div class="box_2 box" onclick="choose(4);this.onclick=null; ">
+                    <div class="card">
+                      <div class="font"></div>
+                      <div class="back">Back</div>
+                    </div>
+                  </div>
+                  <div class="box_3 box" onclick="choose(5);this.onclick=null;">
+                    <div class="card">
+                      <div class="font"></div>
+                      <div class="back">Back</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row_3">
+                  <div class="box_1 box" onclick="choose(6);this.onclick=null; ">
+                    <div class="card">
+                      <div class="font"></div>
+                      <div class="back">Back</div>
+                    </div>
+                  </div>
+                  <div class="box_2 box" onclick="choose(7);this.onclick=null;">
+                    <div class="card">
+                      <div class="font"></div>
+                      <div class="back">Back</div>
+                    </div>
+                  </div>
+                  <div class="box_3 box" onclick="choose(8);this.onclick=null; ">
+                    <div class="card">
+                      <div class="font"></div>
+                      <div class="back">Back</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.10.1/qs.min.js"
+      integrity="sha512-aTKlYRb1QfU1jlF3k+aS4AqTpnTXci4R79mkdie/bp6Xm51O5O3ESAYhvg6zoicj/PD6VYY0XrYwsWLcvGiKZQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>

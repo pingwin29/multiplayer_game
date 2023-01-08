@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible"content="IE=edge"/>
+    <meta name="viewport"content="width=device-width, initial-scale=1.0"/>
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
+<link rel="stylesheet"href="./css/style.css"/></head>
+<body><div class="container-fluid bg-info"><div id="startField"><div class="active"><span class="aciive_circel">&nbsp;
+</span>&nbsp;
+<span id="active"></span>&nbsp;
+User are actived </div><h1 class="text-center fieldName">XO GAME</h1><div class="row"><div class="col-md-6 text-center"><div id="create_field"><h3>Create Match</h3><div class="create_room"><input type="text"
+name="room"
+id="create_match"
+placeholder="Enter Room Name"
+/><button type="submit"
+class="btn btn-danger"
+onclick="createRoom()"
+id="create_btn"
+>Create Match </button></div><h6 class="showPlayerName">Player Name : <span id="plaryername"></span></h6></div></div><div class="col-md-6 text-center"><div id="join_field"><h3>Join Match</h3><div id="room_container">< !-- <div class="room"><div class="row"><div class="room_info col-xs-6">Room Name 1</div><div class="room_join col-xs-6"><button type="submit"
+class="btn btn-success"
+id="join_btn"
+>Join Match </button></div></div></div>--></div></div></div></div></div><div id="gameField"style="display: none">< !-- <div id="message"></div><input type="text"name=""id="inputmsg"/><button type="submit"class="btn btn-success"onclick="sendMsg()">Send </button>--><div class="gamefield_btn_container"><button id="backBtn"class="btn btn-danger"onclick="backAction()">Back </button><button id="resetBtn"class="btn btn-light">reset</button></div><div class="container1"><div class="usrinfo"><div class="usr_info"><span id="playerOne"class="usrname"></span><div class="x">X</div></div><div class="usr_info"><span id="playerTwo"class="usrname"></span><div class="o">o</div></div></div><div id="Message"class="text-secondary ">Waiting For Other Player <div class="dotcontainer"><div class="dot bg-secondary"></div><div class="dot bg-secondary""></div><div class="dot bg-secondary""></div></d></div><div class="gameboard"id="gameboard"><div class="gamebox"><div class="row_1"><div class="box_1 box"onclick="choose(0);this.onclick=null;"><div class="card"><div class="font"></div><div class="back">Back</div></div></div><div class="box_2 box"onclick="choose(1);this.onclick=null;"><div class="card"><div class="font"></div><div class="back">Back</div></div></div><div class="box_3 box"onclick="choose(2);this.onclick=null; "><div class="card"><div class="font"></div><div class="back">Back</div></div></div></div><div class="row_2"><div class="box_1 box"onclick="choose(3);this.onclick=null;"><div class="card"><div class="font"></div><div class="back">Back</div></div></div><div class="box_2 box"onclick="choose(4);this.onclick=null; "><div class="card"><div class="font"></div><div class="back">Back</div></div></div><div class="box_3 box"onclick="choose(5);this.onclick=null;"><div class="card"><div class="font"></div><div class="back">Back</div></div></div></div><div class="row_3"><div class="box_1 box"onclick="choose(6);this.onclick=null; "><div class="card"><div class="font"></div><div class="back">Back</div></div></div><div class="box_2 box"onclick="choose(7);this.onclick=null;"><div class="card"><div class="font"></div><div class="back">Back</div></div></div><div class="box_3 box"onclick="choose(8);this.onclick=null; "><div class="card"><div class="font"></div><div class="back">Back</div></div></div></div></div></div></div></div></div><script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.10.1/qs.min.js"
+integrity="sha512-aTKlYRb1QfU1jlF3k+aS4AqTpnTXci4R79mkdie/bp6Xm51O5O3ESAYhvg6zoicj/PD6VYY0XrYwsWLcvGiKZQ=="
+crossorigin="anonymous"
+referrerpolicy="no-referrer"
+></script><script src="/socket.io/socket.io.js"></script><script src="./js/script.js"></script></body></html>

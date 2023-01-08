@@ -1,0 +1,446 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
+
+* {
+    font-family: 'Black Ops One', cursive;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* --------------start section----------------  */
+body>.container-fluid {
+    height: 100%;
+    position: relative;
+}
+
+#startField .fieldName {
+    margin-bottom: 30px;
+}
+
+#startField>.row {
+    min-height: 400px;
+}
+
+#create_field .create_room input {
+    display: block;
+
+    width: 300px;
+
+    outline: none;
+    border: 0;
+    margin: 20px auto;
+    padding: 7px;
+}
+
+.create_room {
+    margin-bottom: 20px;
+}
+
+.room .row div {
+    height: 50px;
+    line-height: 50px;
+}
+
+.room {
+    border: 1px solid #fff;
+    transition: all .3s linear;
+    color: #fff;
+}
+
+.room:hover {
+    background-color: #fff;
+    color: black;
+}
+
+#room_container {
+    height: 300px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background: black;
+    width: 95%;
+    margin: 0 auto;
+}
+
+#startField .active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#startField .active .aciive_circel {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: darkgreen;
+}
+
+#startField .showPlayerName {
+    margin: 10px auto;
+    color: gray;
+}
+
+#plaryername {
+    color: brown;
+}
+
+#startField .main .col-md-6:first-child {
+    align-self: flex-start;
+}
+
+
+
+
+
+
+/* -----------------game section------------  */
+
+
+
+
+.gamefield_container {
+    width: 400px;
+    min-height: 500px;
+    margin: 0 auto;
+}
+
+.usrinfo {
+    width: 100%;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.dotcontainer {
+    display: inline-block;
+    width: 100px;
+    color: #fff;
+    overflow: hidden;
+    animation: dotanimantion 1s linear infinite alternate;
+}
+
+.dot {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    border-radius: 50%;
+}
+
+@keyframes dotanimantion {
+    from {
+        width: 0px;
+    }
+
+    to {
+        width: 100px;
+    }
+}
+
+.usr_info {
+    display: inline-block;
+    width: 150px;
+    height: 100px;
+    padding: 20px 10px;
+    border-radius: 10px;
+    border: 1px solid #fefefe;
+    text-align: center;
+    color: #fff;
+    background: #2c2c4d;
+    transition: all .4s linear;
+}
+
+.usr_info.acitve {
+    background: orange;
+    border: 2px solid #2c2c4d;
+}
+
+.x,
+.o {
+    margin-top: 5px;
+    font-size: 40px;
+    text-transform: uppercase;
+}
+
+.x {
+    color: #d42515;
+}
+
+.o {
+    color: #f9f871;
+}
+
+.usrname {
+    font-size: 17px;
+    color: #fff;
+}
+
+.gameboard {
+    width: 350px;
+    height: 370px;
+    background: #7e4999;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.gamebox {
+    margin-top: 5px;
+}
+
+.card {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    font-size: 50px;
+    line-height: 100px;
+    text-align: center;
+    margin-left: 6.5px;
+    /* position: relative; */
+    transform: rotateY(0deg);
+    transition: all .6s linear;
+    transform-style: preserve-3d;
+}
+
+.back.active {
+    background: #0fa00a;
+}
+
+.card .x,
+.card .o {
+    width: 100%;
+    height: 100%;
+    transform: rotate3d(0, 1, 0, 0deg);
+    font-size: 80px;
+    cursor: pointer;
+}
+
+.font,
+.back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 30px;
+}
+
+.font {
+    z-index: 2;
+    backface-visibility: hidden;
+    background: #2c2c4d;
+}
+
+.back {
+    transform: rotateY(180deg);
+    background: #2c2c4d;
+}
+
+.card.active {
+    transform: rotateY(180deg)
+}
+
+.gamefield_btn_container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100px;
+}
+
+#gameField div[class*="row_"] {
+    margin-bottom: 10px;
+    display: flex;
+}
+
+/* @media screen and (min-width:310px) and (max-with:600px) { */
+@media (min-width:320px) and (max-width:600px) {
+    .gameboard {
+        margin: 0;
+    }
+
+    .usrinfo {
+        margin: 0 auto 30px 0;
+        display: flex;
+        width: 100%;
+
+    }
+
+    .gamefield_container {
+        width: 100% !important;
+        margin: 0 auto;
+        overflow-x: hidden;
+    }
+
+
+    .container-fluid {
+        padding-top: 20px;
+        /* height: 100vh !important; */
+    }
+
+    #create_field {
+        margin-bottom: 30px;
+    }
+
+    #chat {
+        margin: 0;
+        padding: 0;
+        display: blocks;
+    }
+
+    .chat_container {
+        width: 95% !important;
+        margin: 0 auto;
+    }
+
+
+    #startField .row .col-md-6 {
+        padding: 0;
+    }
+
+    .message_box {
+        width: 95% !important;
+    }
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+#popupMessage {
+    display: none;
+}
+
+#popupMessage .message_box_container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 90;
+    background: rgba(39, 28, 28, 0.979);
+}
+
+#popupMessage .message_box {
+    width: 300px;
+    height: 200px;
+
+    padding: 20px;
+    border-radius: 10px;
+
+
+    position: relative;
+    z-index: 99;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background: linear-gradient(45deg, #f97c00e9, #455581e5);
+}
+
+
+.message_box #message {
+    font-size: 32px;
+    color: #402E32;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 30px auto;
+}
+
+.message_box .restart_btn {
+    display: block;
+    margin: 0 auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#chat {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.message_chat {
+    background: #402E32;
+    width: 100%;
+    height: 400px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+
+}
+
+#chatbox {
+    padding: 10px;
+
+}
+
+.chat_container {
+    /* width: 400px; */
+    width: 98%;
+    margin: 0 auto;
+}
+
+.message_box {
+    text-align: left;
+    padding: 6px 20px;
+    width: 300px;
+    border-radius: 20px;
+    background: linear-gradient(95deg, #20bf55 0%, #01baef 74%);
+    margin-bottom: 5px;
+    font-size: 80%;
+    color: #fff;
+}
+
+.sendby {
+    font-size: 90%;
+    color: gold;
+
+}
+
+.sendby,
+.time {
+    text-align: left;
+    padding-left: 20px;
+}
+
+.time {
+    font-size: 60%;
+    color: gray;
+    font-style: italic;
+}
+
+/* .chat {} */
