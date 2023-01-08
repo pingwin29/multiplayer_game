@@ -1,4 +1,4 @@
-# multiplayer_game
+# multiplayer_game(for learn socket.io)
 - to run local
   - run npm i
   - node index.js
